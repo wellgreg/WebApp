@@ -1,0 +1,125 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome",
+  "definitions": {
+    "Welcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "operation_type": {
+          "type": "string"
+        },
+        "operation_time": {
+          "type": "string"
+        },
+        "operation_place": {
+          "type": "string"
+        },
+        "passenger": {
+          "$ref": "#/definitions/Passenger"
+        },
+        "routes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Route"
+          }
+        }
+      },
+      "required": [
+        "operation_place",
+        "operation_time",
+        "operation_type",
+        "passenger",
+        "routes"
+      ],
+      "title": "Welcome"
+    },
+    "Passenger": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "patronymic": {
+          "type": "string"
+        },
+        "doc_type": {
+          "type": "string"
+        },
+        "doc_number": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string",
+          "format": "date"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "passenger_type": {
+          "type": "string"
+        },
+        "ticket_number": {
+          "type": "string"
+        },
+        "ticket_type": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "birthdate",
+        "doc_number",
+        "doc_type",
+        "gender",
+        "name",
+        "passenger_type",
+        "patronymic",
+        "surname",
+        "ticket_number",
+        "ticket_type"
+      ],
+      "title": "Passenger"
+    },
+    "Route": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "airline_code": {
+          "type": "string"
+        },
+        "flight_num": {
+          "type": "integer"
+        },
+        "depart_place": {
+          "type": "string"
+        },
+        "depart_datetime": {
+          "type": "string"
+        },
+        "arrive_place": {
+          "type": "string"
+        },
+        "arrive_datetime": {
+          "type": "string"
+        },
+        "pnr_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "airline_code",
+        "arrive_datetime",
+        "arrive_place",
+        "depart_datetime",
+        "depart_place",
+        "flight_num",
+        "pnr_id"
+      ],
+      "title": "Route"
+    }
+  }
+}
